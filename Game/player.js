@@ -50,12 +50,12 @@ class Player{
       var dire = this.directionY;
       
       if (this.directionY < 0) {
-        if (this.y - this.size/2 <= top) {
+        if (this.y - this.size/2 <= this.top) {
           this.directionY = 0;
         };
       };
       if (this.directionY > 0) {
-        if (this.y + this.size/2 >= bot) {
+        if (this.y + this.size/2 >= this.bot) {
           this.directionY = 0;       
         };
       };
@@ -71,7 +71,7 @@ class Player{
       if (this.directionX > 0) {
         if (this.x + this.size/2 >= this.canvas.width) {
           this.directionX = 0;
-          //console.log(this.directionX);
+          console.log(this.directionX);
           
         };
       };

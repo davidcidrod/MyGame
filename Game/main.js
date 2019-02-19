@@ -48,23 +48,24 @@ const main = () => {
                 //Manera principal de hacer el movimiento.
             function moveUp() {
                 game.player.setDirection(-1,0);
+                game.checBorderCollision();
             }
         
             function moveDown() {
                 game.player.setDirection(1,0);
-                             
+                game.checBorderCollision();       
             }
         
             function moveLeft() {
                 
                 game.player.setDirection(0,-1);
-                         
+                game.checBorderCollision();
             }
         
             function moveRight() {
                    
                 game.player.setDirection(0,1);
-            
+                game.checBorderCollision();
             }
             
     

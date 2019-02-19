@@ -128,7 +128,7 @@ class Game{
         // collisions
     };
     checBorderCollision(){
-        this.player.checkScreen();  
+        this.player.checkScreen();
        // console.log(this.player.checkScreen());
        //console.log(this.player.x);
     };
