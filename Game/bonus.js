@@ -2,7 +2,7 @@
 
 class Bonus{
     constructor(canvas, y){
-      this.size = 40;
+      this.size = 50;
       this.canvas = canvas;
       this.ctx = this.canvas.getContext('2d');
       this.x = this.canvas.width;

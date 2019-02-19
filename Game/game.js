@@ -10,6 +10,8 @@ class Game{
         this.points = 0;
         this.speed = 5;
         this.bonus =[];
+        this.top = 350;
+        this.bot =800;
 
     };
     startLoop() {
@@ -19,11 +21,11 @@ class Game{
 
             if(Math.random() > 0.96) {
         
-                var top = this.canvas.x = 350;
-                var bot = this.canvas.x = 800;
+                /* var top = this.canvas.y = 350;
+                var bot = this.canvas.y = 800; */
                 var aleat = Math.random() * this.canvas.height;
                 
-                if (aleat <= bot && aleat >= top){
+                if (aleat <= this.bot && aleat >= this.top){
                     const y = aleat;
                     var randomimage = Math.floor((Math.random() * 3));
                     //console.log(randomimage);
@@ -48,8 +50,9 @@ class Game{
             this.checkEnemiesCollisions();
             this.updateCanvas();
             this.clearCanvas();
+            this.checBorderCollision();
             this.drawCanvas();
-            this.checkScoreToSpeed();
+            //this.checkScoreToSpeed();
             this.checkBonusCollisions() 
 
             if(!this.isGameOver) {
@@ -133,13 +136,13 @@ class Game{
     gameOverCallback(callback) {
         this.onGameOver = callback;
     };
-    
+    /* 
     checkScoreToSpeed() {
         
-            if (Game.points == 5 ){
-            this.speed += 20;
+            if (Game.points%25 == 0 ){
+            this.speed += 5;
         };
-    };
+    }; */
     
     checkBonusCollisions() {
      

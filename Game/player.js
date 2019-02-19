@@ -8,10 +8,12 @@ class Player{
       this.x = 10 + this.size/2;
       this.y = this.canvas.height/2;
       this.width = this.size;
-      this.speed = 5;
+      this.speed = 8;
       this.directionX = 0;
       this.directionY = 0;
       this.lives = lives;
+      this.top=350;
+      this.bot=800;
     }
     //
     update() {
@@ -42,8 +44,8 @@ class Player{
     }
   
     checkScreen() {
-      var top = this.canvas.x = 350;
-      var bot = this.canvas.x = 800;
+      /* var top = this.canvas.y = 350;
+      var bot = this.canvas.y = 800 */;
    // SI EL BUFFER EN LO QUE LLEGA AL BORDE NO ES ACTUALIZADO Y SIGUE SIENDO POSITIVO, ENTRA HASTA QUE SE ACTUALIZA Y HACE TOPE.
       var dire = this.directionY;
       

@@ -17,6 +17,7 @@ class Enemy {
     
     update(speed) {
       this.x = this.x + this.direction * speed;
+      //console.log(this.x);
     };
   
     draw() {
