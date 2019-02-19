@@ -17,12 +17,12 @@ class Enemy {
     
     update(speed) {
       this.x = this.x + this.direction * speed;
-      //console.log(this.x);
+      console.log(this.x);
+
     };
   
     draw() {
-      this.ctx.fillStyle = 'red';
-      //this.ctx.fillRect(this.x, this.y - this.size / 2, this.size, this.size);
+     
       var img = new Image();
       
       img.src = this.image[this.randomimage];

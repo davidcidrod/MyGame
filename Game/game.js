@@ -5,6 +5,7 @@ class Game{
         this.canvas = canvas;
         this.ctx = this.canvas.getContext('2d');
         this.player;
+        this.background;
         this.enemies=[];
         this.isGameOver = false;
         this.points = 0;
@@ -15,34 +16,30 @@ class Game{
 
     };
     startLoop() {
+        this.background = new Background(this.canvas);
         this.player = new Player(this.canvas, 3);
 
         const loop = () => {
 
-            if(Math.random() > 0.96) {
+            if(Math.random() > 0.97) {
         
-                /* var top = this.canvas.y = 350;
-                var bot = this.canvas.y = 800; */
                 var aleat = Math.random() * this.canvas.height;
                 
                 if (aleat <= this.bot && aleat >= this.top){
                     const y = aleat;
                     var randomimage = Math.floor((Math.random() * 3));
-                    //console.log(randomimage);
+                    
                     this.enemies.push(new Enemy(this.canvas, y,randomimage));
                 };
             };
             
             if(Math.random() > 0.9985) {
         
-                var top1 = this.canvas.x = 350;
-                var bot1 = this.canvas.x = 800;
                 var aleat1 = Math.random() * this.canvas.height;
                 
-                if (aleat1 <= bot1 && aleat1 >= top1){
+                if (aleat1 <= this.bot && aleat1 >= this.top){
                     const y = aleat1;
-                    //var randomimage = Math.floor((Math.random() * 3));
-                    
+                                        
                     this.bonus.push(new Bonus(this.canvas, y));
                 }; 
             };    
@@ -52,7 +49,7 @@ class Game{
             this.clearCanvas();
             this.checBorderCollision();
             this.drawCanvas();
-            //this.checkScoreToSpeed();
+            this.checkScoreToSpeed();
             this.checkBonusCollisions() 
 
             if(!this.isGameOver) {
@@ -71,9 +68,9 @@ class Game{
             bonus.update(this.speed);
         });
         this.enemies.forEach((enemy) => {
-            //console.log(enemy.speed);
-              enemy.update(this.speed);
+            enemy.update(this.speed);
         });
+        this.background.movebackground();//llamada a move del background
     };
 
     clearCanvas(){
@@ -81,24 +78,27 @@ class Game{
     };
 
     drawCanvas(){
+        this.background.draw();
         this.player.draw();
        
-        this.bonus.forEach((bonus) => {
-            bonus.draw();
-        });
-        
+
         this.enemies.forEach((enemy) => {
             enemy.draw();
             
         });
+
+        this.bonus.forEach((bonus) => {
+            bonus.draw();
+        });
+        
         this.ctx.font = "50px Arial";
         this.ctx.fillText("Score: "+ this.points   , 30, 100); //("",x,y)
         this.ctx.font = "50px Arial";
         this.ctx.fillText("Lives: "+ this.player.lives   , this.canvas.width - 300, 100); //("",x,y)
         
         this.ctx.beginPath();
-        this.ctx.moveTo(0,900);
-        this.ctx.lineTo(this.canvas.width,900);
+        this.ctx.moveTo(0,850);
+        this.ctx.lineTo(this.canvas.width,850);
         this.ctx.stroke();
     };
 
@@ -121,7 +121,7 @@ class Game{
             if (this.points%25 == 0){    
            
               this.speed += 5;
-            };
+            };  
           };
           
         });
@@ -129,20 +129,19 @@ class Game{
     };
     checBorderCollision(){
         this.player.checkScreen();
-       // console.log(this.player.checkScreen());
-       //console.log(this.player.x);
+    
     };
     
     gameOverCallback(callback) {
         this.onGameOver = callback;
     };
-    /* 
+     
     checkScoreToSpeed() {
-        
-            if (Game.points%25 == 0 ){
-            this.speed += 5;
-        };
-    }; */
+        /* 
+            if (this.points%25 == 0 ){
+            this.speed += 1;
+        }; */
+    };
     
     checkBonusCollisions() {
      
@@ -155,12 +154,10 @@ class Game{
             
         };
           if (bonus.x <= 0 ){
-            this.enemies.splice(index, 1);
-            
+            this.bonus.splice(index, 1);
             
         };
-        
-          
+                  
         });
     };
             

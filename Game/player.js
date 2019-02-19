@@ -14,21 +14,29 @@ class Player{
       this.lives = lives;
       this.top=350;
       this.bot=800;
+      this.image = ["./Img/frame-1.gif","./Img/frame-2.gif","./Img/frame-3.gif","./Img/frame-4.gif"]
+      
     }
     //
     update() {
-      //console.log(this.speed)
+      
       this.y = this.y + this.directionY * this.speed;
       this.x = this.x + this.directionX * this.speed;
       
     };
     //
     draw() {
-      this.ctx.fillStyle = 'green';
-      //this.ctx.fillRect( this.x - this.size/2, this.y - this.size/2, this.size, this.size)
-      var img = new Image();
+     
+      /* var img = new Image();
       //img.src = "http://rs17.pbsrc.com/albums/b89/miertje86/Final%20Fantasy%20Gifs/FF-GoldChocobo.gif~c200";
       img.src="./Img/FF-Gold-Right.gif";
+      this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
+          */
+      let randomImagePlayer = Math.floor((Math.random() * 3));
+      
+      var img = new Image();
+      
+      img.src=this.image[randomImagePlayer];
       this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
          
     };   
@@ -44,9 +52,8 @@ class Player{
     }
   
     checkScreen() {
-      /* var top = this.canvas.y = 350;
-      var bot = this.canvas.y = 800 */;
-   // SI EL BUFFER EN LO QUE LLEGA AL BORDE NO ES ACTUALIZADO Y SIGUE SIENDO POSITIVO, ENTRA HASTA QUE SE ACTUALIZA Y HACE TOPE.
+      
+   
       var dire = this.directionY;
       
       if (this.directionY < 0) {
@@ -61,17 +68,17 @@ class Player{
       };
      
       if (this.directionX < 0) {
-        console.log(this.x);
+        
         if (Math.min(this.x) - this.size/2 <= 0) {
           this.directionX = 0;
           this.x = 0 + this.size/2;
-          //console.log("a es: " + this.directionX);
+          
         };
       };
       if (this.directionX > 0) {
         if (this.x + this.size/2 >= this.canvas.width) {
           this.directionX = 0;
-          console.log(this.directionX);
+          
           
         };
       };
