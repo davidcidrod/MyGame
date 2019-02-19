@@ -45,7 +45,7 @@ const main = () => {
         game.gameOverCallback(buildGameOver);
 
         game.startLoop();
-                //Manera principal de hacer el movimiento.
+                // hacer el movimiento.
             function moveUp() {
                 game.player.setDirection(-1,0);
                 game.checBorderCollision();
@@ -94,7 +94,14 @@ const main = () => {
                 game.player.setDirection(0,0);
     
             };
-            
+            document.onkeypress = function(e){
+                if(e.keyCode === 32){
+                    cactuarShoot();
+                }
+            };
+            function cactuarShoot(){
+                game.cactuars.push(game.player.cactuar());
+            };
         };
 
     const buildGameOver = () => {
