@@ -13,6 +13,7 @@ class Game{
         this.bonus =[];
         this.top = 350;
         this.bot =800;
+        this.cactuars=[];
 
     };
     startLoop() {
@@ -71,6 +72,15 @@ class Game{
             enemy.update(this.speed);
         });
         this.background.movebackground();//llamada a move del background
+        //disparos cactuar
+        this.cactuars.forEach((cactuar) => {
+            cactuar.update();
+        });
+        this.cactuars.forEach((cactuar) => {
+            if(cactuar.outCanvasCactuar()){
+                this.cactuars.splice(this.cactuars.indexOf(cactuar),1);
+            };
+        });
     };
 
     clearCanvas(){
@@ -91,6 +101,10 @@ class Game{
             bonus.draw();
         });
         
+        this.cactuars.forEach((cactuar) =>{
+            cactuar.draw();
+        });
+
         this.ctx.font = "50px Arial";
         this.ctx.fillText("Score: "+ this.points   , 30, 100); //("",x,y)
         this.ctx.font = "50px Arial";
@@ -126,6 +140,16 @@ class Game{
           
         });
         // collisions
+        //collision Cactuar
+        this.enemies.forEach((enemy) => {
+            this.cactuars.forEach((cactuar) => {
+                if(cactuar.checkShootEnemy(enemy)){
+                    this.enemies.splice(this.enemies.indexOf(enemy),1);
+                    this.cactuars.splice(this.cactuars.indexOf(cactuar),1);
+                    this.points +=1;
+                };
+            });
+        });
     };
     checBorderCollision(){
         this.player.checkScreen();
