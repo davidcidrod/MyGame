@@ -117,6 +117,9 @@ class Player{
     bonusLive() {
       this.lives++;
     }
+    cactuar(){
+      return new Cactuar(this.canvas, this.x + this.size/2, this.y);
+    }
   
 
   };
