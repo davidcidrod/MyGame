@@ -12,7 +12,7 @@ const main = () => {
     const buildSplashScreen = () => {
         const splashScreen = buildDom(`
         <section class="splash-screen">
-            <h1>My Race Game</h1>
+            <h1>Choco Sprint</h1>
             <button>Start Engine</button>
         </section>       
         `);
@@ -27,6 +27,9 @@ const main = () => {
         const gameScreen = buildDom(`
         <section class="game-screen">
             <canvas></canvas>
+            <audio controls autoplay loop>
+            <source src=“./audio/ChocobosTheme.mp3” type=“audio/mpeg”>
+            </audio>
          </section>
         `);
     

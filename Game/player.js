@@ -17,6 +17,7 @@ class Player{
       this.image = ["./Img/frame-1.gif","./Img/frame-2.gif","./Img/frame-3.gif","./Img/frame-4.gif"]
       this.cactuarBullet = 1;
       
+      
     }
     //
     update() {
@@ -37,8 +38,12 @@ class Player{
       
       var img = new Image();
       
+      
       img.src=this.image[randomImagePlayer];
       this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
+
+      this.ctx.font = "50px Arial";
+      this.ctx.fillText("Cactuars: "+ this.cactuarBullet   , 300, 100); //("",x,y)
          
     };   
   
@@ -84,6 +89,7 @@ class Player{
         };
       };
       
+      
     };
       //colisiones
     checkCollisionEnemy(enemy) {
@@ -125,6 +131,9 @@ class Player{
         this.cactuarBullet--;
       }
     } */
+    
+     
+    
   
 
   };

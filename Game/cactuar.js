@@ -7,7 +7,7 @@ class Cactuar{
         this.ctx = this.canvas.getContext('2d');
         this.x = x;
         this.y = y;
-        this.speed = 10;
+        this.speed = 15;
         this.direction = 1;
         this.image = "./Img/cact.png";
     }

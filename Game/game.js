@@ -34,7 +34,7 @@ class Game{
                 };
             };
             
-            if(Math.random() > 0.98) {
+            if(Math.random() > 0.99) {
         
                 var aleat1 = Math.random() * this.canvas.height;
                 

@@ -92,7 +92,7 @@ p {
 
 .game-screen {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   border: #111;
   background-image: url('https://cdn.discordapp.com/attachments/290121015344758785/546489984144769035/paint.jpg');
   
@@ -108,10 +108,10 @@ p {
 }
 
 .splash-screen h1{
-  font-size: 40px;
+  
+  font-size: 80px;
   color: brown;
-  /*margin-top: 40%;
-  margin-left: 50%; */
+  
 
 }
 
