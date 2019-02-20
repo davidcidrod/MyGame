@@ -15,6 +15,7 @@ class Player{
       this.top=350;
       this.bot=800;
       this.image = ["./Img/frame-1.gif","./Img/frame-2.gif","./Img/frame-3.gif","./Img/frame-4.gif"]
+      this.cactuarBullet = 1;
       
     }
     //
@@ -115,11 +116,15 @@ class Player{
     }
   
     bonusLive() {
-      this.lives++;
+      this.cactuarBullet++;
+      console.log(this.cactuarBullet);
     }
-    cactuar(){
-      return new Cactuar(this.canvas, this.x + this.size/2, this.y);
-    }
+    /* cactuar(){
+      if(this.cactuarBullet > 0){
+        this.game.cactuars.push(new Cactuar(this.canvas, this.x + this.size/2, this.y));
+        this.cactuarBullet--;
+      }
+    } */
   
 
   };

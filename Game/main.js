@@ -100,7 +100,7 @@ const main = () => {
                 }
             };
             function cactuarShoot(){
-                game.cactuars.push(game.player.cactuar());
+                game.cactuar();
             };
         };
 

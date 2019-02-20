@@ -22,7 +22,7 @@ class Game{
 
         const loop = () => {
 
-            if(Math.random() > 0.97) {
+            if(Math.random() > 0.95) {
         
                 var aleat = Math.random() * this.canvas.height;
                 
@@ -34,7 +34,7 @@ class Game{
                 };
             };
             
-            if(Math.random() > 0.9985) {
+            if(Math.random() > 0.98) {
         
                 var aleat1 = Math.random() * this.canvas.height;
                 
@@ -184,5 +184,11 @@ class Game{
                   
         });
     };
+    cactuar(){
+        if(this.player.cactuarBullet > 0){
+          this.cactuars.push(new Cactuar(this.player.canvas, this.player.x + this.player.size/2, this.player.y));
+          this.player.cactuarBullet--;
+        }
+      }
             
 };
