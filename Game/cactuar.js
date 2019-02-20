@@ -2,22 +2,24 @@
 
 class Cactuar{
     constructor(canvas, x, y){
-        this.size = 60;
+        this.size = 80;
         this.canvas = canvas;
         this.ctx = this.canvas.getContext('2d');
         this.x = x;
         this.y = y;
         this.speed = 10;
         this.direction = 1;
-        this.image;
+        this.image = "./Img/cact.png";
     }
 
     update(){
         this.x = this.x + this.direction * this.speed;
     }
     draw(){
-        this.ctx.fillStyle = 'red';
-        this.ctx.fillRect(this.x, this.y - this.size/2, this.y - this,size/2, this.size, this.size);
+        var img = new Image();
+      
+        img.src=this.image
+        this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
 
     }
     outCanvasCactuar(){
