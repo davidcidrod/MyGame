@@ -14,7 +14,11 @@ class Player{
       this.lives = lives;
       this.top=350;
       this.bot=800;
-      this.image = ["./Img/frame-1.gif","./Img/frame-2.gif","./Img/frame-3.gif","./Img/frame-4.gif"]
+      this.image = ["./Img/frame-2.gif","./Img/frame-1.gif","./Img/frame-3.gif","./Img/frame-1.gif"]
+      this.imagePlayer = new Image();
+      this.imagePlayer.src = this.image[0];
+      this.counter = 0;
+      this.imageFrame = 0;
       this.cactuarBullet = 1;
       
       
@@ -34,13 +38,19 @@ class Player{
       img.src="./Img/FF-Gold-Right.gif";
       this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
           */
-      let randomImagePlayer = Math.floor((Math.random() * 3));
       
-      var img = new Image();
-      
-      
-      img.src=this.image[randomImagePlayer];
-      this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
+      this.counter++;
+      if (this.counter === 10 && this.imageFrame <3) {
+        this.imageFrame++
+        this.imagePlayer.src = this.image[this.imageFrame]
+        this.counter = 0;
+      } else if (this.counter === 10 && this.imageFrame === 3 ) {
+        this.imageFrame = 0;
+        this.imagePlayer.src = this.image[this.imageFrame]
+        this.counter = 0;
+      }
+    
+      this.ctx.drawImage(this.imagePlayer, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
 
       this.ctx.font = "50px Arial";
       this.ctx.fillText("Cactuars: "+ this.cactuarBullet   , 300, 100); //("",x,y)
