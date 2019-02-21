@@ -29,12 +29,17 @@ const main = () => {
         const gameScreen = buildDom(`
         <section class="game-screen">
             <canvas></canvas>
+            <audio autoplay id="beep-one">
+            <source src="./Game/audio/ChocoboTheme.mp3">            
+            </audio>
          </section>
         `);
-        const audio = new Audio;
+       
+       /*  const audio = new Audio;
         audio.src = './Game/audio/ChocoboTheme.mp3';
-        audio.play();
-    
+        audio.play(); */
+      
+        
 
         const width = document.querySelector('.game-screen').offsetWidth;
         const height = document.querySelector('.game-screen').offsetHeight;
@@ -108,6 +113,8 @@ const main = () => {
                 game.cactuar();
             };
         };
+        
+
 
     const buildGameOver = () => {
         const gameOverScreen = buildDom(`
@@ -118,7 +125,7 @@ const main = () => {
             </div>
         </section>
         `);
-
+        
         
         const restartButton = document.querySelector('button');
         restartButton.addEventListener('click',  builGameScreen);

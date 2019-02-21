@@ -37,9 +37,7 @@ class Bonus{
         this.imageBonus.src = this.image[this.imageFrame]
         this.counter = 0;
       } 
-    /* 
-      var img = new Image();
-      img.src="https://66.media.tumblr.com/0e90b634fa8533558a660a092dc88343/tumblr_oo3nm2yevm1w83qhyo1_400.gif";  */     
+    
       this.ctx.drawImage(this.imageBonus, this.x - this.size/2, this.y - this.size/2, 80,80); 
     };
     

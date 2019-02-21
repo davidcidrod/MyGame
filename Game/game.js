@@ -127,6 +127,7 @@ class Game{
             if (this.player.lives === 0) {
               this.isGameOver = true;
               this.onGameOver();
+              
             };
           };
           if (enemy.x <= 0 ){

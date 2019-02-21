@@ -33,11 +33,7 @@ class Player{
     //
     draw() {
      
-      /* var img = new Image();
-      //img.src = "http://rs17.pbsrc.com/albums/b89/miertje86/Final%20Fantasy%20Gifs/FF-GoldChocobo.gif~c200";
-      img.src="./Img/FF-Gold-Right.gif";
-      this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
-          */
+      
       
       this.counter++;
       if (this.counter === 5 && this.imageFrame <3) {
