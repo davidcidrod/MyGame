@@ -40,11 +40,11 @@ class Player{
           */
       
       this.counter++;
-      if (this.counter === 10 && this.imageFrame <3) {
+      if (this.counter === 5 && this.imageFrame <3) {
         this.imageFrame++
         this.imagePlayer.src = this.image[this.imageFrame]
         this.counter = 0;
-      } else if (this.counter === 10 && this.imageFrame === 3 ) {
+      } else if (this.counter === 5 && this.imageFrame === 3 ) {
         this.imageFrame = 0;
         this.imagePlayer.src = this.image[this.imageFrame]
         this.counter = 0;
@@ -52,8 +52,8 @@ class Player{
     
       this.ctx.drawImage(this.imagePlayer, this.x - this.size/2, this.y - this.size/2, 100,90); 
 
-      this.ctx.font = "50px Arial";
-      this.ctx.fillText("Cactuars: "+ this.cactuarBullet   , 300, 100); //("",x,y)
+      this.ctx.font = "30px Critter";
+      this.ctx.fillText("Cactuars: "+ this.cactuarBullet   , 30, 150); //("",x,y)
          
     };   
   
@@ -111,7 +111,7 @@ class Player{
       if(collEnemyRight && collEnemyLeft && collEnemyTop && collEnemyBottom) {
         return true;
       }
-  
+      
       return false;
     }
   

@@ -105,10 +105,11 @@ class Game{
             cactuar.draw();
         });
 
-        this.ctx.font = "50px Arial";
+        this.ctx.font = "30px Cottonwood";
+        this.ctx.fillStyle = "green";
         this.ctx.fillText("Score: "+ this.points   , 30, 100); //("",x,y)
-        this.ctx.font = "50px Arial";
-        this.ctx.fillText("Lives: "+ this.player.lives   , this.canvas.width - 300, 100); //("",x,y)
+        this.ctx.font = "30px Tahoma";
+        this.ctx.fillText("Lives: "+ this.player.lives   , 30, 200); //("",x,y)
         
         this.ctx.beginPath();
         this.ctx.moveTo(0,850);
