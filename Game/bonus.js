@@ -20,8 +20,18 @@ class Bonus{
     };
   
     draw() {
-      this.ctx.fillStyle = 'red';
-      
+    /* 
+      this.counter++;
+      if (this.counter === 10 && this.imageFrame <3) {
+        this.imageFrame++
+        this.imagePlayer.src = this.image[this.imageFrame]
+        this.counter = 0;
+      } else if (this.counter === 10 && this.imageFrame === 3 ) {
+        this.imageFrame = 0;
+        this.imagePlayer.src = this.image[this.imageFrame]
+        this.counter = 0;
+      } */
+    
       var img = new Image();
       img.src="https://66.media.tumblr.com/0e90b634fa8533558a660a092dc88343/tumblr_oo3nm2yevm1w83qhyo1_400.gif";      
       this.ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 

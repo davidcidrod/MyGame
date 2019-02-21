@@ -12,8 +12,8 @@ const main = () => {
     const buildSplashScreen = () => {
         const splashScreen = buildDom(`
         <section class="splash-screen">
-            <h1>Choco Sprint</h1>
-            <button class="startbutton" >Start Engine</button>
+            <img src="./Img/big.png" class="title"/>
+            <button class="startbutton" >Ride Chocobo</button>
         </section>       
         `);
 
@@ -112,8 +112,10 @@ const main = () => {
     const buildGameOver = () => {
         const gameOverScreen = buildDom(`
         <section class="game-over">
-            <h1>Game Over Screen</h1>
-            <button>Restart</button>
+            <div class="title-Game-Over">
+            <h1>Game Over</h1>           
+            <button class="Restart" >Restart</button>
+            </div>
         </section>
         `);
 
