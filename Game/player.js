@@ -2,7 +2,7 @@
 
 class Player{
     constructor(canvas, lives) {
-      this.size = 100;
+      this.size = 80 ;
       this.canvas = canvas;
       this.ctx = this.canvas.getContext('2d');
       this.x = 10 + this.size/2;
@@ -50,7 +50,7 @@ class Player{
         this.counter = 0;
       }
     
-      this.ctx.drawImage(this.imagePlayer, this.x - this.size/2, this.y - this.size/2, this.size,this.size); 
+      this.ctx.drawImage(this.imagePlayer, this.x - this.size/2, this.y - this.size/2, 100,90); 
 
       this.ctx.font = "50px Arial";
       this.ctx.fillText("Cactuars: "+ this.cactuarBullet   , 300, 100); //("",x,y)

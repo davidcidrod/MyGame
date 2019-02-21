@@ -119,7 +119,7 @@ const main = () => {
         </section>
         `);
 
-    
+        audio.stop();
         const restartButton = document.querySelector('button');
         restartButton.addEventListener('click',  builGameScreen);
     };
